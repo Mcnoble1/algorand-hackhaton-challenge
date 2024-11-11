@@ -1,95 +1,133 @@
-# Pera Challenge
+# Pera Algorand Challenge
 
-## Introduction
+A decentralized application (dApp) for managing Algorand assets and facilitating peer-to-peer trading on the Algorand blockchain.
 
-Welcome to the **Pera Challenge**! Pera is the leading gateway for Algorand projects, providing essential tools and libraries for developers. This challenge simulates real-world scenarios in decentralized application (dApp) development using [Pera Connect](https://github.com/perawallet/connect) —a library designed to simplify wallet integration and blockchain interactions.
+![Pera Challenge](https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2232&ixlib=rb-4.0.3)
 
-## Objective
+## Features
 
-Build a simple web application using your favorite web framework (React, Vue, or any other) that:
+### 🔐 Wallet Integration
+- Seamless connection with Pera Wallet
+- Multi-account support with account selector
+- Real-time balance updates
+- Network switching between MainNet and TestNet
 
-- Connects to a user's Algorand address using Pera Connect.
-- Handles transactions and displays verified assets.
-- Provides a seamless and user-friendly experience.
+### 💎 Asset Management
+- View and manage verified Algorand Standard Assets (ASAs)
+- Filter assets by type (All/Collectibles/Tokens)
+- Search functionality for quick asset discovery
+- One-click asset opt-in
+- Real-time USD value display for supported assets
 
-## Challenge Steps
+### 💱 Asset Trading
+- Create peer-to-peer trades
+- Support for ALGO and ASA trading pairs
+- Atomic transfers ensuring secure trades
+- Active trade management
+- Trade status tracking (Active/Completed/Cancelled)
 
-### Step 1: Connect the Wallet
+### 🎨 User Interface
+- Modern, responsive design
+- Real-time transaction notifications
+- Loading states and error handling
+- Dark mode with beautiful gradients
+- Mobile-friendly layout
 
-- **Implement "Connect with Pera" Button:**
-  - Add a button labeled **"Connect with Pera"** to your dApp.
-  - Upon clicking, initiate the wallet connection using Pera Connect.
-- **Handle Multiple Accounts:**
-  - Pera Connect may return multiple accounts, if the user selects.
-  - If multiple accounts are returned, prompt the user to select one.
-  - Display the selected account address on the screen.
-- **Network Compatibility:**
-  - Ensure your application can connect with both **Testnet** and **Mainnet**.
-  - Provide an option for users to switch between networks.
+## Getting Started
 
-### Step 2: Implement Payment Transaction
+### Prerequisites
+- Node.js 16+
+- NPM or Yarn
+- [Pera Wallet](https://perawallet.app/) mobile app
 
-- **"Donate 1 ALGO" Feature:**
-  - Add a button labeled **"Donate 1 ALGO"**.
-  - When clicked, prompt the user to sign a transaction sending **1 ALGO** to your account.
-- **Transaction Handling:**
-  - Provide feedback on the transaction status (e.g., pending, confirmed, failed).
-  - Handle errors gracefully and inform the user accordingly.
+### Installation
 
-### Step 3: Display Verified Assets
+1. Clone the repository:
+```bash
+git clone https://github.com/mcnoble/algorand-hackhaton-challenge.git
+cd algorand-hackhaton-challenge
+git checkout -b submission
+```
 
-- **Fetch and List Verified Assets:**
-  - Use Pera's [Public API](https://docs.perawallet.app/references/public-api) to retrieve a list of all available verified assets.
-  - Display the assets in a user-friendly list, including their logos and names.
- 
-### Step 4: Asset Opt-In Functionality
+2. Install dependencies:
+```bash
+npm install
+```
 
-- **Opt-In to Assets:**
-  - When a user clicks on an asset from the list, initiate an opt-in transaction for that asset.
-  - Prompt the user to sign the opt-in transaction via Pera Connect.
-- **Confirmation and Feedback:**
-  - Confirm to the user when the opt-in is successful.
-  - Display any errors if the opt-in fails.
+3. Start the development server:
+```bash
+npm run dev
+```
 
----
+## Usage
 
-## Optional Enhancements
+### Connecting Your Wallet
+1. Click "Connect with Pera" button
+2. Scan the QR code with your Pera Wallet mobile app
+3. Approve the connection
 
-*For participants looking to go the extra mile, consider implementing the following feature, which requires a basic backend service:*
+### Switching Networks
+1. Use the network switcher to switch between MainNet and TestNet
+2. Your wallet balance and assets will be updated accordingly
 
-- **Atomic Swap Engine:**
-  - Create a minimal clone of belowed https://atomixwap.xyz. This will be a good chance to understand the hidden details and complexities creating a real-life blockchain application.
+### Donate 1 Algo
+1. Click "Donate 1 Algo" button
+2. Sign and Approve the transaction with your Pera Wallet mobile app
+3. 1 ALGO will be deducted from your wallet and added to ours;
 
----
+### Managing Assets
+1. Navigate to the "Verified Assets" section to see testnet and mainet verified assets
+2. Use filters to find specific assets, Collectibles to see NFTs and Tokens to see fungible tokens
+3. Click "Opt In" to add an asset to your wallet
 
-**SUBMISSIONS SHOULD BE A PR FOR THIS REPO**
+### Creating a Trade
+1. Switch to "Asset Trading" view
+2. Click "Create Trade"
+3. Select assets (NFTs) or Tokens and amounts for the trade
+4. Choose your preferred asset to swap or convert to
+4. Submit the trade
 
----
+### Accepting/Cancelling Trades
+1. View active trades in the trading section
+2. Click "Accept Trade" to complete a trade
+3. Trades get executed using Atomic transfers
 
-## Resources
-- [Pera Developer Docs](https://docs.perawallet.app)
-- [Pera Connect Documentation](https://github.com/perawallet/connect)
-- [Pera Public API Documentation](https://docs.perawallet.app/references/public-api)
+## Technical Details
+
+### Built With
+- React + TypeScript
+- Tailwind CSS
+- Algorand SDK
+- Pera Wallet Connect
+- Lucide React Icons
+
+### Key Components
+- `App.tsx`: Main application logic and state management
+- `AssetList`: Displays and manages verified assets
+- `TradingView`: Handles trade creation and management
+- `Navigation`: App navigation and view switching
+- `WalletConnect`: Wallet connection handling
+
+### Security Features
+- Atomic transfers for secure trading
+- Transaction verification
+- Balance validation
+- Asset opt-in checks
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Algorand Foundation](https://www.algorand.foundation/)
+- [Pera Wallet](https://perawallet.app/)
 - [Algorand Developer Portal](https://developer.algorand.org/)
-- [Algorand JavaScript SDK](https://github.com/algorand/js-algorand-sdk)
-
----
-
-## Evaluation Criteria
-
-Your submission will be evaluated based on:
-
-- **Functionality:**
-  - Does the application meet all the required steps?
-  - Are optional enhancements implemented?
-- **Code Quality:**
-  - Is the code clean, well-organized, and commented?
-  - Are best practices followed?
-- **User Experience (UX):**
-  - Is the application intuitive and easy to use?
-  - Does it handle errors gracefully?
-- **Creativity and Innovation:**
-  - Any unique features or improvements beyond the requirements.
-- **Technical Implementation:**
-  - Efficient use of APIs and handling of asynchronous operations.
-  - Security considerations (e.g., handling sensitive data appropriately).
