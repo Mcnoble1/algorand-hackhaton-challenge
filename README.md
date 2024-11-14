@@ -44,9 +44,8 @@ A decentralized application (dApp) for managing Algorand assets and facilitating
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/mcnoble/algorand-hackhaton-challenge.git
-cd algorand-hackhaton-challenge
-git checkout -b submission
+git clone https://github.com/yourusername/pera-challenge.git
+cd pera-challenge
 ```
 
 2. Install dependencies:
@@ -66,31 +65,21 @@ npm run dev
 2. Scan the QR code with your Pera Wallet mobile app
 3. Approve the connection
 
-### Switching Networks
-1. Use the network switcher to switch between MainNet and TestNet
-2. Your wallet balance and assets will be updated accordingly
-
-### Donate 1 Algo
-1. Click "Donate 1 Algo" button
-2. Sign and Approve the transaction with your Pera Wallet mobile app
-3. 1 ALGO will be deducted from your wallet and added to ours;
-
 ### Managing Assets
-1. Navigate to the "Verified Assets" section to see testnet and mainet verified assets
-2. Use filters to find specific assets, Collectibles to see NFTs and Tokens to see fungible tokens
+1. Navigate to the "Verified Assets" section
+2. Use filters to find specific assets
 3. Click "Opt In" to add an asset to your wallet
 
 ### Creating a Trade
 1. Switch to "Asset Trading" view
 2. Click "Create Trade"
-3. Select assets (NFTs) or Tokens and amounts for the trade
-4. Choose your preferred asset to swap or convert to
+3. Select assets and amounts for the trade
 4. Submit the trade
 
 ### Accepting/Cancelling Trades
 1. View active trades in the trading section
 2. Click "Accept Trade" to complete a trade
-3. Trades get executed using Atomic transfers
+3. Creators can cancel their trades using "Cancel Trade"
 
 ## Technical Details
 

@@ -383,12 +383,12 @@ function App() {
       <Toaster position="top-right" />
 
       <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-          <h1 className="text-4xl font-bold mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-12 gap-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-center md:text-left">
             Pera Algorand Challenge
           </h1>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
             <NetworkSelector network={network} onNetworkChange={setNetwork} />
             {!account ? (
               <WalletConnect
@@ -396,17 +396,17 @@ function App() {
                 isConnecting={isConnecting}
               />
             ) : (
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <button
                   onClick={handleDonation}
-                  className="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg transition-colors"
+                  className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg transition-colors w-full sm:w-auto"
                 >
                   <Coins className="w-5 h-5" />
                   Donate 1 ALGO
                 </button>
                 <button
                   onClick={disconnectWallet}
-                  className="flex items-center gap-2 bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg transition-colors"
+                  className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg transition-colors w-full sm:w-auto"
                 >
                   <LogOut className="w-5 h-5" />
                   Disconnect
@@ -418,20 +418,21 @@ function App() {
 
         {account && (
           <div className="mb-8">
-            <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg">
-              <div className="flex items-center justify-between">
-                <div>
+            <div className="bg-white/5 backdrop-blur-sm p-4 md:p-6 rounded-lg">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div className="w-full md:w-auto">
                   <h2 className="text-xl font-semibold mb-2">
                     Connected Account
                   </h2>
-                  <p className="font-mono text-gray-300">{account}</p>
-                </div>
-                <div className="text-right">
-                  <h2 className="text-xl font-semibold mb-2">Balance</h2>
-                  <p className="font-mono text-gray-300 flex items-center gap-2">
-                    <Wallet className="w-5 h-5" />
-                    {accountBalance.toFixed(3)} ALGO
+                  <p className="font-mono text-gray-300 text-sm break-all">
+                    {account}
                   </p>
+                </div>
+                <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg">
+                  <Wallet className="w-5 h-5" />
+                  <span className="font-mono">
+                    {accountBalance.toFixed(3)} ALGO
+                  </span>
                 </div>
               </div>
             </div>
@@ -448,7 +449,7 @@ function App() {
 
             {activeView === 'assets' ? (
               <div className="mb-12">
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                   <h2 className="text-2xl font-bold">Verified Assets</h2>
                   <SearchAndFilter
                     onSearch={handleSearch}

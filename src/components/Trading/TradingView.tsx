@@ -38,6 +38,7 @@ export function TradingView({
         <TabsList className="grid grid-cols-2 gap-4 bg-white/5 p-1 rounded-lg">
           <TabsTrigger
             value="create"
+            onClick={() => setActiveTab('create')}
             className={`px-4 py-2 rounded-lg transition-colors ${
               activeTab === 'create'
                 ? 'bg-purple-600 text-white'
@@ -48,6 +49,7 @@ export function TradingView({
           </TabsTrigger>
           <TabsTrigger
             value="active"
+            onClick={() => setActiveTab('active')}
             className={`px-4 py-2 rounded-lg transition-colors ${
               activeTab === 'active'
                 ? 'bg-purple-600 text-white'
@@ -58,17 +60,16 @@ export function TradingView({
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="create">
+        <TabsContent value="create" className={activeTab === 'create' ? 'block' : 'hidden'}>
           <CreateTrade
             optedInAssets={optedInAssets}
             assets={assets}
             accountBalance={accountBalance}
             onCreateTrade={onCreateTrade}
-            onSuccess={() => setActiveTab('active')}
           />
         </TabsContent>
 
-        <TabsContent value="active">
+        <TabsContent value="active" className={activeTab === 'active' ? 'block' : 'hidden'}>
           <ActiveTrades
             trades={trades}
             onAcceptTrade={onAcceptTrade}
